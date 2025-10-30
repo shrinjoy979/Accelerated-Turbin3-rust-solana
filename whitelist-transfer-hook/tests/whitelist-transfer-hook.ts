@@ -199,7 +199,6 @@ describe("whitelist-transfer-hook", () => {
       'confirmed',
       TOKEN_2022_PROGRAM_ID,
     );
-
     const transaction = new Transaction().add(transferInstructionWithHelper);
 
     try {
