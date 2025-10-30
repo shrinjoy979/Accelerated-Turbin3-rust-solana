@@ -35,6 +35,7 @@ impl<'info> InitializeExtraAccountMetaList<'info> {
                         Seed::Literal {
                             bytes: b"whitelist".to_vec(),
                         },
+                        Seed::AccountKey { index: 0 } // first account, [souce_token_account] in the transfer hook structure
                     ],
                     false, // is_signer
                     false // is_writable

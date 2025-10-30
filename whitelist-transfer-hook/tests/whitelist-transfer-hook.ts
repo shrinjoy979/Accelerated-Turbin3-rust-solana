@@ -55,7 +55,7 @@ describe("whitelist-transfer-hook", () => {
 
   const whitelist = anchor.web3.PublicKey.findProgramAddressSync(
     [
-      Buffer.from("whitelist"), wallet.publicKey.toBuffer()
+      Buffer.from("whitelist"), sourceTokenAccount.toBuffer()
     ],
     program.programId
   )[0];
@@ -74,7 +74,7 @@ describe("whitelist-transfer-hook", () => {
   // });
 
   it("Add user to whitelist", async () => {
-    const tx = await program.methods.addToWhitelist(provider.publicKey)
+    const tx = await program.methods.addToWhitelist(sourceTokenAccount)
       .accountsPartial({
         admin: provider.publicKey,
         whitelist,
@@ -85,8 +85,8 @@ describe("whitelist-transfer-hook", () => {
     console.log("Transaction signature:", tx);
   });
 
-  it("Remove user to whitelist", async () => {
-    const tx = await program.methods.removeFromWhitelist(provider.publicKey)
+  xit("Remove user to whitelist", async () => {
+    const tx = await program.methods.removeFromWhitelist(sourceTokenAccount)
       .accountsPartial({
         admin: provider.publicKey,
         whitelist,

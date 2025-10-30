@@ -27,11 +27,11 @@ pub mod whitelist_transfer_hook {
     //     ctx.accounts.initialize_whitelist(ctx.bumps)
     // }
 
-    pub fn add_to_whitelist(ctx: Context<WhitelistOperations>, user: Pubkey) -> Result<()> {
-        ctx.accounts.add_to_whitelist(user, &ctx.bumps)
+    pub fn add_to_whitelist(ctx: Context<WhitelistOperations>, user_ata: Pubkey) -> Result<()> {
+        ctx.accounts.add_to_whitelist(user_ata, &ctx.bumps)
     }
 
-    pub fn remove_from_whitelist(ctx: Context<WhitelistOperations>, user: Pubkey) -> Result<()> {
+    pub fn remove_from_whitelist(ctx: Context<WhitelistOperations>, user_ata: Pubkey) -> Result<()> {
         ctx.accounts.remove_from_whitelist()
     }
 

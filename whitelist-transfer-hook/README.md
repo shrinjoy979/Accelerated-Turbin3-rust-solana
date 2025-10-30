@@ -325,7 +325,7 @@ The transfer hook integrates seamlessly with the SPL Token 2022 transfer process
 This whitelist transfer hook provides a robust access control mechanism for Token 2022 mints, ensuring that only pre-approved addresses can transfer tokens while maintaining the standard token interface that users and applications expect. 
 
 
-
+// to generate a new program ID
 solana address -k target/deploy/whitelist_transfer_hook-keypair.json
 solana account $(solana address -k target/deploy/whitelist_transfer_hook-keypair.json)
 solana account $(solana address)
@@ -365,3 +365,15 @@ Transaction failed: Program log: AnchorError caused by account: whitelist. Error
 
 
 6 passing (19s)
+
+// create a private key silently
+solana-keygen new -o tests/wallets/user_1.json -s
+// To return the public key
+solana address -k tests/wallets/user_1.json => BFiuzmLEHcUDBdyZJcarAMU9NwRvMb3PfEa5Nc7a2XjA
+Signature: 598KKtow7DRj6QF3e4S7x8FkrtiqEEP9h11evtdnP9FfDBxxxnqaqg9qtS2b9Y39j9iP9MxnB39Qqz5FTwckmC3J
+
+
+Program Id: AH9YVFAyvMj9H97E1NmuLhyhNbSA1xaz63y8cSYaRWy9
+Signature: 5YNURJE9LK64vmEQNB7bjmKd1tRUjNRSirkNaNs6iW3KMSFff682cu6o61MrtmaFMXqFSp1F3aWZvRbPh9js4QNo
+
+
